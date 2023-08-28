@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="stylesheet" href="main.css">
+  <title>E-commerce Product Page</title>
+</head>
+<body>
+  <!-- For mobile nav bar -->
+  <div id="nav-overlay"></div>
+  <!-- Navigation bar -->
+  <nav>
+    <!-- Logo -->
+    <img src="./images/icon-menu.svg" id="menu-icon" onclick="openNav()" alt="menu"></img>
+    <img src="./images/logo.svg" alt="" class="nav-bar" id="logo" alt="logo">
+    <div id="mySidenav" class="nav-links sidenav">
+      <img src="./images/icon-close.svg" alt="Close icon" class="closebtn" onclick="closeNav()"></img>
+      <a href="" class="nav-bar nav-link" id="nav-link1">Collections</a>
+      <a href="" class="nav-bar nav-link" id="nav-link2">Men</a>
+      <a href="" class="nav-bar nav-link" id="nav-link3">Women</a>
+      <a href="" class="nav-bar nav-link" id="nav-link4">About</a>
+      <a href="" class="nav-bar nav-link" id="nav-link5">Contact</a>
+    </div>
+    <div class="nav-icons">
+      <img src="./images/icon-cart.svg" alt="" class="nav-bar" id="nav-cart-icon">
+      <img src="./images/image-avatar.png" alt="" class="nav-bar" id="profile">
+    </div>
+  </nav>
+  <hr class="main-hr">
+
+  <main>
+    <div id="cart-container">
+      <p class="shopping-cart-text">Cart</p>
+      <hr class="cart-hr">
+      <div id="cart-items"></div>
+      <button id="checkout-btn"> 
+        <p class="checkout-text">Checkout</p>
+      </button>
+    </div>
+
+    <div class="container">
+      <!-- Modal Section -->
+      <div class="modal-imgs">
+        <img src="./images/image-product-1.jpg" alt="" id="main-img" onclick="openModal();currentSlide(1)">
+        <!-- Images used to open the lightbox -->
+        <div class="lightbox-images">
+          <div class="column" onclick="openModal();currentSlide(1)">
+            <img src="./images/image-product-1-thumbnail.jpg" alt="" class="thumbnail-img" id="main-thumbnail">
+          </div>
+
+          <div class="column" onclick="openModal();currentSlide(2)">
+            <img src="./images/image-product-2-thumbnail.jpg" alt="" class="thumbnail-img">
+          </div>
+
+          <div class="column" onclick="openModal();currentSlide(3)">
+            <img src="./images/image-product-3-thumbnail.jpg" alt="" class="thumbnail-img">
+          </div>
+
+          <div class="column" onclick="openModal();currentSlide(4)" >
+            <img src="./images/image-product-4-thumbnail.jpg" alt="" class="thumbnail-img">
+          </div>
+        </div>
+      </div>
+
+      <!-- The Modal/Lightbox -->
+      <div id="myModal" class="modal">
+        <img src="./images/icon-close.svg" alt="" class="close cursor" onclick="closeModal()"></img>
+        <div class="modal-content">
+          <div class="mySlides">
+            <img src="./images/image-product-1.jpg" alt="">
+          </div>
+      
+          <div class="mySlides">
+            <img src="./images/image-product-2.jpg" alt="">
+          </div>
+      
+          <div class="mySlides">
+            <img src="./images/image-product-3.jpg" alt="">
+          </div>
+      
+          <div class="mySlides">
+            <img src="./images/image-product-4.jpg" alt="">
+          </div>
+
+          <!-- Next/previous controls --> 
+          <div class="prev-btn">
+            <img src="./images/icon-previous.svg" alt="" class="prev" onclick="plusSlides(-1)"> </img>
+          </div>
+          <div class="next-btn">
+            <img src="./images/icon-next.svg" alt="" class="next" onclick="plusSlides(1)"> </img>
+          </div>
+
+          <!-- Thumbnail image controls -->
+          <div class="img-controls">
+            <div class="overlay" onclick="currentSlide(1)">
+              <img class="demo thumbnail-img" src="./images/image-product-1-thumbnail.jpg" alt="">
+            </div>
+            
+            <div class="overlay" onclick="currentSlide(2)">
+              <img class="demo thumbnail-img" src="./images/image-product-2-thumbnail.jpg" alt="">
+            </div>
+            
+            <div class="overlay" onclick="currentSlide(3)">
+              <img class="demo thumbnail-img" src="./images/image-product-3-thumbnail.jpg" alt="">
+            </div>
+            
+            <div class="overlay" onclick="currentSlide(4)">
+              <img class="demo thumbnail-img" src="./images/image-product-4-thumbnail.jpg" alt="">
+            </div>
+
+          </div>
+        </div>
+      </div>
+      
+      <!-- Product information section -->
+      <div class="product-info">
+        <p class="company-name">Sneaker Company</p>
+        <h1 id="product-name">Fall Limited Edition Sneakers</h1>
+        <p class="sneaker-descrip">These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they’ll withstand everything the weather can offer.</p>
+        
+        <!-- Pricing -->
+        <div class="pricing-contrast">
+          <div class="pricing">
+            <h2 id="current-price">$125.00</h2>
+            <div class="discount-background">
+              <p class="discount">50%</p>
+            </div>
+          </div>
+          <p class="original-price">$250.00</p>
+        </div>
+        
+        <!-- Add item to cart functionality -->
+        <div class="add-product">
+          <div class="update-amount">
+            <button id="minus" aria-label="Minus Button"><img src="./images/icon-minus.svg" alt="Minus Button"></button>  
+            <input value="0" aria-label="Quantity of Product" id="input"/>
+            <button id="plus" aria-label="Plus Button"><img src="./images/icon-plus.svg" alt="Plus Button"></button>  
+          </div>
+
+          <button id="update-cart"> <img src="./images/icon-cart.svg" id="cart-icon" alt=""><p class="cart-text">Add to cart</p></button>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
